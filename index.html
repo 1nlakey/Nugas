@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%95%B8</text></svg>">
+    <title>About me 🕸</title>
+</head>
+<body>
+    <!-- ===== Video Background ===== -->
+    <video class="video-background" autoplay muted loop playsinline>
+        <source src="assets/background.mp4" type="video/mp4">
+    </video>
+
+    <!-- ===== Foto Profil ===== -->
+    <div class="profile-picture-container" onClick="flipProfilePicture()">
+        <div class="profile-picture-flipper">
+            <img src="assets/pfp.jpg" alt="Profile Picture" class="profile-picture-face pfp-front">
+            <img src="assets/sigma.jpeg" alt="Profile Picture" class="profile-picture-face pfp-back">
+        </div>
+    </div>
+
+    <!-- ===== Bio ===== -->
+    <div class="profile">
+        <h1 class="name">Putra Tri Rizki</h1>
+        <iframe class="spotify-frame" data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/7pjhNJLkrDINJwU023KV2R?utm_source=generator&si=39d9f52ca4e24cea" width="25%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="bio">
+            <p>Hey there, my name is <strong>Putra Tri Rizki</strong>, often called <strong>Putra</strong>. I was born in <strong>Central Sulawesi</strong> on <strong>May 14, 2007</strong>, and I currently reside on <strong>Nani Wartabone Grave Street, Suwawa</strong>.</p>
+
+            <p>I am registered with student ID <strong>05301425069</strong> in the <strong>Information Systems</strong> program, Faculty of <strong>Engineering</strong>, Gorontalo State University, class of <strong>2025</strong>. I am currently in semester <strong>3</strong>.</p>
+
+            <p>My educational background began at <abbr title="Sekolah Dasar Negeri"><strong>SDN 10 Biau</strong></abbr>, followed by <abbr title="Sekolah Menengah Pertama Negeri"><strong>SMPN 2 Biau</strong></abbr>, and I completed secondary education at <abbr title="Sekolah Menengah Kejuruan Negeri"><strong>SMKN 1 Biau</strong></abbr> majoring in <strong>Computer and Network Engineering</strong>.</p>
+
+            <p>Outside of academics, I have an interest in <strong>listening to music, playing games, watching movies, reading books/comics, and sometimes coding</strong>, and I aspire to become a <strong>software engineer</strong>.</p>
+
+            <address>I can be reached via email at <strong>ikanaseen01@gmail.com</strong> or by phone at <strong>0812345678910</strong> if needed.</address>
+        </div>
+
+        <!-- ===== Quotes ===== -->
+        <blockquote class="quote">
+            <p>"Kode boleh berubah, tapi rasa ingin belajar nggak pernah usang."</p>
+            <cite>&mdash; Putra Tri Rizki</cite>
+        </blockquote>
+    </div>
+
+    <!-- ===== Social Media Links ===== -->
+    <div class="social-links">
+        <a href="https://github.com/1nlakey" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://instagram.com/putratririzkiii" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://open.spotify.com/user/31hrcfj3w3zlllpkz6mygko6wquq?si=6577175192e14cf8" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-spotify"></i>
+        </a>
+    </div>
+    <script src="script.js"></script>
+</body>

@@ -1,0 +1,233 @@
+body {
+    font-family: Lucida Console, Monaco, monospace;
+    margin: 0;
+    padding: 0 0 60px;
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #232328, #362e26, #282a33, #322c26);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    will-change: background-position;
+    z-index: -3;
+}
+
+.video-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -2;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+}
+
+.video-background::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.profile-picture-container,
+.name,
+.bio,
+.spotify-frame,
+.quote,
+.social-links {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.profile-picture-container { animation-delay: 0.1s; }
+.name            { animation-delay: 0.5s; } 
+.spotify-frame    { animation-delay: 0.8s; }
+.bio             { animation-delay: 1.2s; }
+.quote           { animation-delay: 1.4s; }
+.social-links    { animation-delay: 1.6s; }
+
+.name {
+    display: inline-block;
+    overflow: hidden;
+    color: #e8e6e1;
+    border-right-color: #e8e6e1;
+    border-right: 2px solid;
+    white-space: nowrap;
+    font-size: 30px;
+    margin-bottom: 0 auto;
+    width: 15ch;
+    animation: fadeIn 0.8s ease forwards 0.1s,
+               typewriter 2s steps(20, end) 0.5s backwards,
+               blink-caret .75s step-end infinite;
+}
+
+/* satu rule gabungan untuk bio, menggantikan yang lama */
+.bio {
+    max-width: 700px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+    text-align: left;
+    line-height: 1.9;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    color: #b8b5ae;
+}
+
+.bio p,
+.bio address {
+    margin-bottom: 5px;
+}
+
+.bio p:last-child,
+.bio address:last-child {
+    margin-bottom: 0;
+}
+
+.bio strong {
+    color: #ffc878;
+    font-weight: normal;
+}
+
+.bio address {
+    font-style: normal;
+}
+
+.bio abbr {
+    text-decoration: none;
+    cursor: help;
+}
+
+/* HTML Quotations: kutipan pribadi */
+.quote {
+    max-width: 700px;
+    margin: 20px auto 0;
+    padding: 12px 20px;
+    border-left: 3px solid #ffc878;
+    text-align: left;
+    font-style: italic;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    color: #b8b5ae;
+}
+
+.quote p {
+    margin: 0;
+}
+
+.quote cite {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 13px;
+    color: #ffc878;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+.social-links i {
+    font-size: 24px;
+    color: #b8b5ae;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links i:hover {
+    color: #ffc878;
+    cursor: pointer;
+}
+
+.profile-picture-container {
+    width: 10%;
+    border-radius: 8px;
+    aspect-ratio: 1 / 1;
+    perspective: 1000px;
+    cursor: pointer;
+    margin: 40px auto 0;
+    display: block;
+}
+
+.profile-picture-flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.profile-picture-flipper.flipped {
+    transform: rotateY(180deg);
+}
+
+.profile-picture-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(255, 200, 120, 0.15);
+}
+
+.pfp-front {
+    transform: rotateY(0deg);
+}
+
+.pfp-back {
+    transform: rotateY(180deg);
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 15ch; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #e8e6e1; }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
